@@ -218,12 +218,6 @@ class MillcoBrowser extends CMSModule
 	
 	// $this->RegisterModulePlugin();
 
-
-
-	//$this->RegisterRoute('/hashes\/(?P<entryKey>[0-9]+)\/',array('action'=>'details'));
-	//$this->RegisterRoute('/hashes\/(?P<entryKey>[0-9]+)\/(?P<returnid>[0-9]+)\/',array('action'=>'details'));
-
-
 	// Don't allow parameters other than the ones you've explicitly defined
 	$this->RestrictUnknownParams();
 
@@ -240,35 +234,32 @@ class MillcoBrowser extends CMSModule
 	}
 
 
-  /*---------------------------------------------------------
-   GetEventDescription()
-   If your module can create events, you will need
-   to provide the API with documentation of what
-   that event does. This method wraps up a simple
-   return of the localized description.
-   ---------------------------------------------------------*/
-  function GetEventDescription ( $eventname )
-  {
-    return $this->Lang('event_info_'.$eventname );
-  }
+	  /*---------------------------------------------------------
+	   GetEventDescription()
+	   If your module can create events, you will need
+	   to provide the API with documentation of what
+	   that event does. This method wraps up a simple
+	   return of the localized description.
+	   ---------------------------------------------------------*/
+	  function GetEventDescription ( $eventname )
+	  {
+	    return $this->Lang('event_info_'.$eventname );
+	  }
 
 
-  /*---------------------------------------------------------
-   GetEventHelp()
-   If your module can create events, you will need
-   to provide the API with documentation of how to
-   use the event. This method wraps up a simple
-   return of the localized description.
-   ---------------------------------------------------------*/
-  function GetEventHelp ( $eventname )
-  {
-    return $this->Lang('event_help_'.$eventname );
-  }
+	  /*---------------------------------------------------------
+	   GetEventHelp()
+	   If your module can create events, you will need
+	   to provide the API with documentation of how to
+	   use the event. This method wraps up a simple
+	   return of the localized description.
+	   ---------------------------------------------------------*/
+	  function GetEventHelp ( $eventname )
+	  {
+	    return $this->Lang('event_help_'.$eventname );
+	  }
 
 	
-
-
-
 	/*---------------------------------------------------------
 	   InstallPostMessage()
 	   After installation, there may be things you want to
@@ -319,7 +310,7 @@ class MillcoBrowser extends CMSModule
 	  return false;
 	  }
 
-	function GetContentBlockFieldInput($blockName,$value,$params,$adding,ContentBase $content_obj){
+	function GetContentBlockFieldInput($blockName,$value,$params,$adding, ContentBase $content_obj){
 		
 		//TODO add more params, file type etc.
 		
@@ -338,7 +329,7 @@ class MillcoBrowser extends CMSModule
 	}
 
 
-         function GetContentBlockFieldValue($blockName,$blockParams,$inputParams){
+         function GetContentBlockFieldValue($blockName,$blockParams,$inputParams, ContentBase $content_obj){
 
            if (isset($inputParams[$blockName]))
              return $inputParams[$blockName];
