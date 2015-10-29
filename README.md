@@ -11,7 +11,7 @@ To add a filepicker to a template you can use:
 {content_module module='MillcoBrowser' block='your_block_name' folder='path/to/a/folder' label='Your input label'}
 ```
 
-To use an instance of the filepicker in your module you can do something like this::
+To use an instance of the filepicker in your module you can do something like this:
 
 ```php
 if($MillcoBrowser = $this->GetModuleInstance('MillcoBrowser')) {
@@ -28,9 +28,9 @@ In particular if you use a non standard uploads folder or tmp folder then you wi
 
 ###License and Credits
 
-[RESPONSIVE filemanager](https://github.com/trippo/ResponsiveFilemanager) itself is licensed under a Creative Commons Attribution-NonCommercial 3.0 Unported License.
+[RESPONSIVE filemanager](https://github.com/trippo/ResponsiveFilemanager) is licensed under a Creative Commons Attribution-NonCommercial 3.0 Unported License.
 
-**If you use this module on a commerical site you must get the necessary permission from Alberto via responsivefilemanager.com**
+**If you use this module on a commerical site you must get the necessary permission from Alberto via [responsivefilemanager.com](http://www.responsivefilemanager.com)**
 
 
 Stephen at millipedia.

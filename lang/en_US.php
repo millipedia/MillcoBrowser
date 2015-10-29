@@ -57,7 +57,8 @@ if($MillcoBrowser = $this->GetModuleInstance(\'MillcoBrowser\')) {
 
 <h3>License</h3>
 <p>
-The module code itself is licensed under the GPL <em>however ...</em> RESPONSIVE filemanager itself is licensed under a Creative Commons Attribution-NonCommercial 3.0 Unported License.<br>
+RESPONSIVE filemanager is licensed under a Creative Commons Attribution-NonCommercial 3.0 Unported License and the code for this module has now been updated to reflect this.<br>
+
 <p><strong>If you use this module on a commerical site you must get the necessary permission from Alberto via responsivefilemanager.com</p>
 ';
 
