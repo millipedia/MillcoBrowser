@@ -33,4 +33,4 @@ In particular if you use a non standard uploads folder or tmp folder then you wi
 **If you use this module on a commerical site you must get the necessary permission from Alberto via [responsivefilemanager.com](http://www.responsivefilemanager.com)**
 
 
-Stephen at millipedia.
+Stephen at millipedia.3do4rrEXB4AaipEPStV1
