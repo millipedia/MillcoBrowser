@@ -8,7 +8,7 @@ This is a very quick replacement for the GBFilemanager module, it's not really r
 
 To add a filepicker to a template you can use:
 ```
-{content_module module='MillcoBrowser' block='your_block_name' folder='path/to/a/folder' label='Your input label'}
+{content_module module='MillcoBrowser' block='your_block_name' folder='path/to/a/folder' label='Your input label' file_type='img'}
 ```
 
 To use an instance of the filepicker in your module you can do something like this:
@@ -17,7 +17,7 @@ To use an instance of the filepicker in your module you can do something like th
 if($MillcoBrowser = $this->GetModuleInstance('MillcoBrowser')) {
 
 	$myForm.='<label>Featured Image</label>';
-	$myForm.=$MillcoBrowser->millco_create_filepicker('your_block_name', $current_image, $folder);
+	$myForm.=$MillcoBrowser->millco_create_filepicker('your_block_name', $current_image, $folder, 'img');
 
 }else{
 	$myForm.= 'Cannot retrieve filepicker...';
