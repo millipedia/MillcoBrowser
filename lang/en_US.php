@@ -13,6 +13,8 @@ $lang['title_mod_prefs'] = 'Module Preferences';
 $lang['title_mod_admin'] = 'Module Admin Panel';
 $lang['title_admin_panel'] = 'MillcoBrowser';
 
+$lang['param_file_type'] = 'img (default), file or video';
+
 $lang['moddescription'] = 'This module allows module developers to add a file manager to their module. ';
 
 $lang['changelog'] = '<ul>
@@ -34,7 +36,7 @@ Copyright © Tecrail - Alberto Peripolli. </p>
 <br>
 <code>
 <pre>
-{content_module module=\'MillcoBrowser\' block=\'your_block_name\' folder=\'path/to/a/folder\' label=\'Your input label\'}
+{content_module module=\'MillcoBrowser\' block=\'your_block_name\' folder=\'path/to/a/folder\' label=\'Your input label\' file_type=\'img\'}
 </pre>
 </code>
 <br>
@@ -45,7 +47,7 @@ Copyright © Tecrail - Alberto Peripolli. </p>
 if($MillcoBrowser = $this->GetModuleInstance(\'MillcoBrowser\')) {
 
 	$myForm.=\'<label>Featured Image</label>\';
-	$myForm.=$MillcoBrowser->millco_create_filepicker(\'your_block_name\', $current_image, $folder);
+	$myForm.=$MillcoBrowser->millco_create_filepicker(\'your_block_name\', $current_image, $folder, \'img\');
 
 }else{
 	$myForm.= \'Cannot retrieve filepicker...\';

@@ -5,6 +5,7 @@ if(ISSET($_GET['_sk_'])){
 	// ok - first time in we need to get the session id  from CMSMS
 	session_id($_GET['_sk_']);
 };
+
 session_start();
 
 if($_SESSION['cms_admin_user_id'] < 1){
