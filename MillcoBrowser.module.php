@@ -461,7 +461,7 @@ class MillcoBrowser extends CMSModule
 				$file_picker.= '<div class="input-append">';
 				$file_picker.=$this->CreateInputText($id, $field_id, $current_value);
 				 // <input type="text" value="' .  $current_value .'" id="' . $field_id .'" name="' . $field_id .'">';
-				 $file_picker.= '<a type="button" class="btn" href="javascript:millco_open_popup(\''. $fp_url .'\')">Select image</a>
+				 $file_picker.= '<a class="btn" href="javascript:millco_open_popup(\''. $fp_url .'\')">Select</a>
 				</div>';
 
 			}
