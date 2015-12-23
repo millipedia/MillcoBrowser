@@ -7,6 +7,15 @@ This is a very quick replacement for the GBFilemanager module, it's not really r
 
 If you [download a zipped version](https://github.com/millipedia/MillcoBrowser/archive/master.zip) of this project rather than checking it out via git you'll need to change the name of the folder to MillcoBrowser rather than MillcoBrowser-master before you upload it to your modules directory.
 
+The version of the example .htaccess file included from v2.1.1 of CMSMS includes some directives which will prevent the filebrowser loading. If you use that version then you'll need to comment out the relative redirects:
+
+```
+#RedirectMatch 403 ^.*/lib/.*\.php$
+RedirectMatch 403 ^.*/tmp/.*\.php$
+#RedirectMatch 403 ^.*/modules/.*\.php$
+RedirectMatch 403 ^.*/uploads/.*\.php$
+```  
+
 ##Usage
 
 To add a filepicker to a template you can use:
