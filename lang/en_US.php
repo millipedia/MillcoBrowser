@@ -39,6 +39,7 @@ Copyright © Tecrail - Alberto Peripolli. </p>
 {content_module module=\'MillcoBrowser\' block=\'your_block_name\' folder=\'path/to/a/folder\' label=\'Your input label\' file_type=\'img\'}
 </pre>
 </code>
+<p>The <em>file_type</em> parameter can be \'img\' (default), \'file\' or \'video\'<p>
 <br>
 <p>To use an instance of the filepicker in your module you can do something like this::</p>
 <br>
