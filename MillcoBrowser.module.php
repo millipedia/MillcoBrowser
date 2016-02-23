@@ -323,11 +323,13 @@ class MillcoBrowser extends CMSModule
 			$folder='';
 		}
 
-		$file_type=1; //image - our default file_type
+
+		$file_type='img'; //image - our default file_type
 
 		if(isset($params['file_type'])){
 
-			$file_type=$this->_file_type($params['file_type']);
+			$file_type=$params['file_type'];
+
 		}
 
 		//get the input
@@ -342,7 +344,7 @@ class MillcoBrowser extends CMSModule
 
 				if (isset($inputParams[$blockName]))
 				 return $inputParams[$blockName];
-		}
+			 }
 
          // function ValidateContentBlockValue($blockName,$value,$blockparams){
 
@@ -436,6 +438,7 @@ class MillcoBrowser extends CMSModule
 							$_SESSION['millcobrowser_key'] = md5(uniqid());
 
 				}
+
 				//translate our string to file type value;
 				$file_type_val=$this->_file_type($file_type);
 
