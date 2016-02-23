@@ -23,6 +23,8 @@ To add a filepicker to a template you can use:
 {content_module module='MillcoBrowser' block='your_block_name' folder='path/to/a/folder' label='Your input label' file_type='img'}
 ```
 
+The **file_type** parameter can be 'img' (default), 'file' or 'video'
+
 To use an instance of the filepicker in your module you can do something like this:
 
 ```php
@@ -35,7 +37,7 @@ if($MillcoBrowser = $this->GetModuleInstance('MillcoBrowser')) {
 	$myForm.= 'Cannot retrieve filepicker...';
 }
 ```
-At the moment there\'s not many options, hopefully they will get added in soon, you can always update the Responsive Filebrowser config.php file if you need specific settings.
+At the moment there's not many options, hopefully they will get added in soon, you can always update the Responsive Filebrowser config.php file if you need specific settings.
 In particular if you use a non standard uploads folder or tmp folder then you will need to change those.
 
 ###License and Credits
