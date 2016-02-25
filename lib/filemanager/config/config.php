@@ -9,7 +9,7 @@ if(ISSET($_GET['_sk_'])){
 session_start();
 
 if($_SESSION['cms_admin_user_id'] < 1){
-	die("Sorry, you seem not to be logged into the CMS admin any more...");
+	die("Sorry, you seem not to be logged into the CMS admin any more.");
 }
 
 mb_internal_encoding('UTF-8');
@@ -33,8 +33,8 @@ date_default_timezone_set('Europe/Rome');
 |
 */
 
-// CMS Made Simple additional integration 
-// can we include our module call here? or maybe move all this into the root 
+// CMS Made Simple additional integration
+// can we include our module call here? or maybe move all this into the root
 
 
 
@@ -105,6 +105,8 @@ $config = array(
 	|
 	*/
 	//'thumbs_base_path' => '../../thumbs/',
+	// If you don't use a standard CMS MS temp folder then you'll
+	// probably need to change this.
 	'thumbs_base_path' => '../../../../tmp/thumbs/',
 
 	/*
