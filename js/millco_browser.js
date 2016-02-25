@@ -8,8 +8,8 @@ function millco_open_popup(url){
 }
 
 function responsive_filemanager_callback(field_id){
-	
-	// var newval=jQuery('#'+field_id).val();
-	// alert('update '+field_id+" with "+url);
+
+	var newval=thumbpath + $('#'+field_id).val();
+	$("#"+field_id+"-thumb").attr("src", newval);
 
 }
