@@ -233,7 +233,8 @@ class MillcoBrowser extends CMSModule
 	$this->CreateParameter('file_type', '', $this->Lang('param_file_type'));
 	$this->SetParameterType('file_type', CLEAN_STRING);
 
-	//$this->AddEventHandler( 'Core', 'ContentPostRender', true );
+	// $this->AddEventHandler( 'Core', 'ContentPostRender', true );
+
 	}
 
 
@@ -355,27 +356,32 @@ class MillcoBrowser extends CMSModule
 
 				 function DoEvent( $originator, $eventname, &$params )
 				{
-				// if ($originator == 'Core' && $eventname == 'ContentPostRender')
-				// 	{
 
-				// 		 $tempcontent=$params['content'];
-				// 		 $pos=stripos($tempcontent,"</head");
-				// 		 if( $pos !== FALSE && isset($this->ppMetadata)){
-				// 			$tempcontent=substr($tempcontent,0,$pos).$this->ppMetadata.substr($tempcontent,$pos);
-				// 			$params['content'] = $tempcontent;
-				// 		 }
+				if ($originator == 'Core' && $eventname == 'ContentPostRender')
+					{
+
+						 $tempcontent=$params['content'];
+						 $pos=stripos($tempcontent,"</head");
+						 if( $pos !== FALSE && isset($this->mb_meta)){
+							$tempcontent=substr($tempcontent,0,$pos).$this->mb_meta.substr($tempcontent,$pos);
+							$params['content'] = $tempcontent;
+						 }
 
 
-				// 	}
+					}
 				}
 
 				// load required js in admin.
 				function GetHeaderHTML(){
 
+					// this doesn't work for a content module by the looks of things.
+					// will put in template till we work out why...
+
 					return '
-						<!-- required js for filebrowser -->
+						<!-- required js and styles for MillcoBrowser module -->
 						<script src="' . $this->config['root_url'] . '/modules/MillcoBrowser/js/millco_browser.min.js"></script>
-						';
+						<link type="text/css" rel="stylesheet" href="' . $this->config['root_url'] . '/modules/MillcoBrowser/css/mb.css">
+							';
 
 				}
 
@@ -443,8 +449,24 @@ class MillcoBrowser extends CMSModule
 				$file_type_val=$this->_file_type($file_type);
 
 				$file_picker='';
-				$file_picker.= '<!-- required js for filebrowser -->
-					<script src="' . $this->config['root_url'] . '/modules/MillcoBrowser/js/millco_browser.js"></script>';
+				$fp_image='';
+				$fp_thumbpath=$this->config['root_path'] . '/tmp/thumbs/';
+				$fp_thumburl=$this->config['root_url'] . '/tmp/thumbs/';
+
+				if($file_type=='img'){
+
+						//see if we have a thumbnail for our current image:
+						$current_thumb = $fp_thumbpath . $current_value;
+
+						if (file_exists($current_thumb)) {
+						    $fp_image = $fp_thumburl . $current_value;
+						}else{ // just use a placeholder thumb.
+						    $fp_image= $this->config['root_url'] . '/modules/MillcoBrowser/lib/filemanager/img/ico/gif.jpg';
+						}
+
+				}
+
+				$fp_js= $this->config['root_url'] . '/modules/MillcoBrowser/js/millco_browser.js';
 
 				// one day we could put more of these into options.
 				$fp_url=$this->config['root_url'] . '/modules/MillcoBrowser/lib/filemanager/dialog.php?';
@@ -461,11 +483,17 @@ class MillcoBrowser extends CMSModule
 				$fp_url.='&amp;' . '_sk_=' . session_id();
 				$fp_url.='&amp;nocache=' . time();
 
-				$file_picker.= '<div class="input-append">';
-				$file_picker.=$this->CreateInputText('', $field_id, $current_value);
-				 // <input type="text" value="' .  $current_value .'" id="' . $field_id .'" name="' . $field_id .'">';
-				 $file_picker.= '<a class="btn" href="javascript:millco_open_popup(\''. $fp_url .'\')">Select</a>
-				</div>';
+				$tpl = $this->smarty->CreateTemplate($this->GetTemplateResource('file_picker.tpl'));
+
+				$tpl->assign('fp_url',$fp_url);
+				$tpl->assign('fp_js',$fp_js);
+				$tpl->assign('fp_thumburl',$fp_thumburl);
+				$tpl->assign('fp_image',$fp_image);
+				$tpl->assign('fp_image_id', $field_id.'-thumb');
+
+				$tpl->assign('fp_input',$this->CreateInputText('', $field_id, $current_value));
+
+				$file_picker=$tpl->fetch();
 
 			}
 					return $file_picker;
