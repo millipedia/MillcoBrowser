@@ -1,21 +1,21 @@
 
 .mb-table {
-	display: table;
+  display: table;
 }
 
 .mb-tr {
-	display: table-row;
+  display: table-row;
 }
 
 .mb-td {
-	display: table-data;
-	vertical-align: middle;
+  display: table-data;
+  vertical-align: middle;
 }
 
 .mb-thumb {
-	max-width: 120px;
-	height: auto;
-	padding: 8px;
-	border: 1px solid #ccc;
-	margin: 10px;
+  max-width: 120px;
+  height: auto;
+  padding: 8px;
+  border: 1px solid #ccc;
+  margin: 10px;
 }
