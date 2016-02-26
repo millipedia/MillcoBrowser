@@ -8,8 +8,8 @@
 }
 
 .mb-td {
-  display: table-data;
-  vertical-align: middle;
+  display: table-cell;
+  vertical-align: top;
 }
 
 .mb-thumb {
@@ -17,5 +17,5 @@
   height: auto;
   padding: 8px;
   border: 1px solid #ccc;
-  margin: 10px;
+  margin: 10px 10px 10px 0;
 }
