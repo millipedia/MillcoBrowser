@@ -1,8 +1,13 @@
 # MillcoBrowser
 
+** Given that the forthcoming 2.2 release of CMSMS is going to have an reusable file browser as a core module then there's very unlikely to be any more development of this module.   
+If you can't wait for V2.2 then you can also use the [JM Filepicker](http://dev.cmsmadesimple.org/projects/jmfilepicker) module. Or hell, use this module, but on your own head be it. **
+
 CMS Made Simple module to enable use of [Responsive Filemanager](http://www.responsivefilemanager.com) within other modules.
 
 This is a very quick replacement for the GBFilemanager module, it's not really ready for production but if you need something in a hurry then knock yourself out.
+
+
 ##Installing
 
 If you [download a zipped version](https://github.com/millipedia/MillcoBrowser/archive/master.zip) of this project rather than checking it out via git you'll need to change the name of the folder to MillcoBrowser rather than MillcoBrowser-master before you upload it to your modules directory.
